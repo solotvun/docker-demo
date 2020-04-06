@@ -9,7 +9,7 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'sudo npm install --unsafe-perm=true --allow-root --only=dev'
+       sh 'npm install --allow-root --only=dev'
        sh 'npm test'
      }
    }
